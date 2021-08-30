@@ -1,25 +1,17 @@
-import logo from './logo.svg';
+import React, { useMemo } from 'react';
+import DataTable from './components/Table';
+
+import DATA from './data/list.json';
+import { COLUMNS, GROUPED_COLUMNS } from './data/columns';
+
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const columns = useMemo(() => COLUMNS, []);
+  const groups = useMemo(() => GROUPED_COLUMNS, []);
+  const data = useMemo(() => DATA, []);
+
+  return <DataTable columns={columns} data={data} />;
 }
 
 export default App;
