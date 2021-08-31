@@ -7,6 +7,7 @@ import {
 } from 'react-table';
 
 // import CssBaseline from '@material-ui/core/CssBaseline';
+import { makeStyles } from '@material-ui/core/styles';
 import MaUTable from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -16,7 +17,18 @@ import TableRow from '@material-ui/core/TableRow';
 import { GlobalFilter } from './GlobalFilter';
 import { Checkbox } from './CheckBox';
 
+const useStyles = makeStyles({
+  table: {
+    maxWidth: 800,
+    margin: '0 auto',
+    border: '1px solid #ccc',
+    borderRadius: '0px',
+  },
+});
+
 function DataTable({ columns, data }) {
+  const classes = useStyles();
+
   const {
     getTableProps,
     getTableBodyProps,
@@ -58,7 +70,7 @@ function DataTable({ columns, data }) {
           ))}
         </div>
         <div className="app">
-          <MaUTable {...getTableProps()}>
+          <MaUTable {...getTableProps()} className={classes.table}>
             <TableHead>
               {headerGroups.map((headerGroup) => (
                 <TableRow {...headerGroup.getHeaderGroupProps()}>
@@ -97,7 +109,7 @@ function DataTable({ columns, data }) {
               })}
             </TableBody>
           </MaUTable>
-          <div>
+          <div style={{ marginTop: '1.5rem' }}>
             <span>
               <strong>
                 Page {pageIndex + 1} of {pageOptions.length} |
