@@ -16,14 +16,14 @@ body {
 .MuiTable-root {
   width: 80% !important;
   margin: 0 auto !important;
-  border-radius: 10px !important;
   border: 1px solid #ccc !important;
-  box-shadow: 5px 3px 5px 0px rgba(235, 235, 235, 1);
   border-radius: 10px !important;
   border-collapse: inherit !important;
+  box-shadow: 5px 3px 5px 0px rgba(235, 235, 235, 1);
 }
 
-table tr td, table tr th{
+table tr td,
+table tr th {
   font-size: 1.25rem !important;
 }
 
@@ -38,4 +38,61 @@ table tr td, table tr th{
   height: 30px;
   padding-left: 1rem;
   font-size: 1.75rem;
+}
+
+.dropdown-content {
+  position: absolute;
+  left: 8.6%;
+  top: 9.6%;
+  margin: -16px 15px 15px;
+  font-size: 1.25rem;
+  width: 79.85%;
+  height: 250px;
+  resize: vertical;
+  overflow: scroll;
+  border: 1px solid rgba(66, 20, 95, 0.5);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: #FFF;
+  z-index: 9999;
+}
+
+.labels {
+  display: flex;
+  align-items: center;
+  margin: 15px 10%;
+  padding: 0 10px;
+  width: 78%;
+  height: 45px;
+  border: 1px solid rgba(133, 133, 133, 0.582);
+  border-radius: 7px;
+  z-index: 999;
+}
+
+.badges {
+  display: inline-block;
+  margin-right: 1rem;
+  padding: 5px 8px;
+  font-size: 1.25rem;
+  border: 1px solid rgba(190, 190, 190, 0.493);
+  background: #CCC;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: block;
+  width: 100%;
+  padding: 4px 0;
+  list-style-type: none;
+}
+
+li:hover {
+  color: #FFF;
+  background: #0096FF
 }
