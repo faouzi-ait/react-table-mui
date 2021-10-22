@@ -41,7 +41,8 @@ function DataTable({ columns, data }) {
                 item.toggleHidden(true);
               }}
             >
-              {item.Header}
+              <span>{item.Header}</span>
+              <span style={{ position: "absolute", top: '-1px', right: '2px' }}>x</span>
             </span>
           ))}
         </div>
@@ -60,16 +61,7 @@ function DataTable({ columns, data }) {
           </div>
         )}
       </div>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+
       <div className="app">
         <MaUTable {...getTableProps()}>
           <TableHead>
